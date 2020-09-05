@@ -25,3 +25,49 @@ Why not?
 查看分支：git branch -v
 切换分支：git checkout 分支名
 把指定的分支合并到当前分支上：git merge 分支名
+
+1.创建项目，进行初始化，并进行项目账户信息配置
+	在D:\workspaceidea\java200522\gittest\目录下创建项目名称文件夹：githubhello （工作区）
+	git init  在工作区目录下会生成.git本地库文件夹
+	git config user.name "zhangsanatguigu"
+	git config user.email "dev111_atguigu@163.com"
+	在本地库.git目录的config文件中生成配置信息。
+
+2.创建新文件，进行提交本地库
+	touch love.txt
+	vim love.txt
+	git add love.txt
+	git commit -m "新建文件"
+
+
+3.注册github账号，在github上创建远程库
+
+4.添加地址映射，将本地库代码上传远程库
+	将远程库的url地址映射为origin的一个名称。以后操作远程库，就用这个名称就可以了。简化操作过程。
+	git remote add origin https://github.com/zhangsanatguigu/githubhello.git
+	git push origin master  将本地库的master分支，推送到远程库。
+
+5.其他人可以克隆远程库到本地,并指定新的项目名称。
+
+	git clone https://github.com/zhangsanatguigu/githubhello.git githubhello2
+
+6.其他人，需要配置当前项目账户信息
+	git config user.name "lisiatguigu"
+	git config user.email "dev222_atguigu@163.com"
+
+7.其他人，修改文件，提交到本地库
+	vim love.txt
+	git add .
+	git commit -m ""
+
+8.其他人，将本地库推送到远程库
+	1) 不是合作伙伴，提交会报错
+		$ git push origin master
+		remote: Permission to zhangsanatguigu/githubhello.git denied to lisiatguigu.
+		fatal: unable to access 'https://github.com/zhangsanatguigu/githubhello.git/': The requested URL returned error: 403
+
+	2) 张三邀请丽思为合作伙伴，给丽思邮箱发邀请函，丽思打开邀请函，同意邀请，成为张三的合作伙伴。再次提交，OK.
+		git push origin master
+
+9.zhangsanatguigu将lisiatguigu提交的代码pull下来
+	git pull origin master
