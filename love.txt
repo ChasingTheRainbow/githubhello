@@ -1,3 +1,27 @@
 Will you merry me from fanxin
 Yes! from fanxin2
 no
+Why not?
+查看文件状态：git status
+添加到暂存区：git add 文件名
+撤销暂存区的文件：git reset 文件名
+将暂存区的文件提交到本地库：git commit -m “注释内容”
+添加和提交合并命令：git commit -am "注释内容"
+查看日志：git log
+	git log 文件名
+	git log --pretty=oneline 在一行显示
+	git reflog
+回到历史版本：
+	git reset --hard HEAD^ 一个^代表一个版本
+	git reset --hard HEAD~n 回退n次操作
+版本穿梭：
+	git reset --hard 版本号
+撤销：
+	未add，未commit
+	git checkout -- 文件名
+	已add，未commit
+	git reset
+创建分支：git branch 分支名
+查看分支：git branch -v
+切换分支：git checkout 分支名
+把指定的分支合并到当前分支上：git merge 分支名
